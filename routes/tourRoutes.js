@@ -15,7 +15,6 @@ router.param("id", tourController.checkID);
 router
   .route("/")
   .get(tourController.getAllTours)
-
   .post(tourController.checkBody, tourController.createTour)
   .put(() => {
     //تابع مورد نظر
