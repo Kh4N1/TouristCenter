@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 const tours = JSON.parse(
+  // eslint-disable-next-line no-undef
   fs.readFileSync(`${__dirname}/../dev-data/data/tours-simple.json`),
 );
 
@@ -56,6 +57,7 @@ exports.createTour = (req, res) => {
   const newTour = Object.assign({ id: newId }, req.body);
   tours.push(newTour);
   fs.writeFile(
+    // eslint-disable-next-line no-undef
     `${__dirname}/dev-data/data/tours-simple.json`,
     JSON.stringify(tours),
     (err) => {
