@@ -17,10 +17,10 @@ app.use(express.json());
 // eslint-disable-next-line no-undef
 app.use(express.static(`${__dirname}/public`));
 
-app.use((req, res, next) => {
-  console.log("hello from middleware 💥");
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("hello from middleware 💥");
+//   next();
+// });
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
