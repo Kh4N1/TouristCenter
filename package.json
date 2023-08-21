@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
-    "start:prod": "set NODE_ENV=Production && nodemon server.js"
+    "start:prod": "set NODE_ENV=Production && nodemon server.js",
+    "importData": "node .\\dev-data\\data\\import-dev-data.js --import",
+    "deleteData": "node .\\dev-data\\data\\import-dev-data.js --delete"
   },
   "repository": {
     "type": "git",
