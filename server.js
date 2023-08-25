@@ -28,7 +28,7 @@ Promise.race([
   timeout(5),
 ])
   .then(() => {
-    console.log("DB connection successful! ✅");
+    console.log("✅ DB connection successful! ");
   })
   .catch((error) => {
     console.error(`💥${error.message}`);
