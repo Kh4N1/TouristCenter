@@ -25,7 +25,7 @@ Promise.race([
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }),
-  timeout(5),
+  timeout(7),
 ])
   .then(() => {
     console.log("✅ DB connection successful! ");
