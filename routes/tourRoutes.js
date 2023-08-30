@@ -1,6 +1,6 @@
 const express = require("express");
-
-const tourController = require("./../controllers/tourController.js");
+const tourController = require("./../controllers/tourController");
+const authController = require("./../controllers/authController");
 
 // app.get("/api/v1/tours", getAllTours);
 // app.get("/api/v1/tours/:id", getTour);
@@ -21,7 +21,7 @@ router.route("/monthly-plan/:year").get(tourController.getMonthlyPlan);
 
 router
   .route("/")
-  .get(tourController.getAllTours)
+  .get(authController.protect, tourController.getAllTours)
   .post(tourController.createTour)
   .put(() => {
     //تابع مورد نظر
