@@ -4,30 +4,16 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 const Tour = require("./../../models/tourModel");
 
-const timeout = function (sec) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(
-        new Error(
-          `❌ Request took too long for getting DBs! Timeout after ${sec} second ❌`,
-        ),
-      );
-    }, sec * 1000);
-  });
-};
-
 const DB = process.env.DATABASE.replace(
   "<PASSWORD>",
   process.env.DATABASE_PASSWORD,
 );
 
-Promise.race([
-  mongoose.connect(DB, {
+mongoose
+  .connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  }),
-  timeout(5),
-])
+  })
   .then(() => {
     console.log("DB connection successful! ✅");
   })
