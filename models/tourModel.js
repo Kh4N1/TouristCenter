@@ -5,11 +5,16 @@ const User = require("./userModel");
 
 const tourSchema = new mongoose.Schema(
   {
-    id: {
-      type: Number,
-      required: [true, "A tour must have a id"],
-      unique: true,
-    },
+    // id: {
+    //   type: Number,
+    //   required: [true, "A tour must have a id"],
+    //   unique: true,
+    // },
+    // _id: {
+    //   type: ObjectId,
+    //   auto: true
+    // },
+    // _id: false,
     name: {
       type: String,
       required: [true, "A tour must have a name"],
@@ -17,7 +22,7 @@ const tourSchema = new mongoose.Schema(
       trim: true,
       maxLength: [40, "A tour must have less or equal 40 characters"],
       minLength: [10, "A tour must have more or equal 10 characters"],
-      validator: [validator.isAlpha, "Tour name must only contain characters"],
+      // validator: [validator.isAlpha, "Tour name must only contain characters"],
     },
     slug: {
       type: String,
@@ -85,6 +90,30 @@ const tourSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    startLocation: {
+      // GeoJSON
+      type: {
+        type: String,
+        default: 'Point',
+        enum: ['Point']
+      },
+      coordinates: [Number],
+      address: String,
+      description: String
+    },
+    locations: [
+      {
+        type: {
+          type: String,
+          default: 'Point',
+          enum: ['Point']
+        },
+        coordinates: [Number],
+        address: String,
+        description: String,
+        day: Number
+      }
+    ],
   },
   {
     toJSON: { virtuals: true },
