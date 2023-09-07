@@ -15,7 +15,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('DB connection successful!'));
+  .then(() => console.log('✔  DB connection successful!'));
 
 // READ JSON FILE
 const tours = JSON.parse(
