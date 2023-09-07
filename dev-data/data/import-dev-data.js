@@ -23,7 +23,7 @@ const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, "utf-8"));
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
-    await Tour.create(tours);
+    await Tour.insertMany(tours);
     console.log("Data successfully loaded!");
   } catch (err) {
     console.log(err);

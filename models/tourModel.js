@@ -5,16 +5,6 @@ const User = require("./userModel");
 
 const tourSchema = new mongoose.Schema(
   {
-    // id: {
-    //   type: Number,
-    //   required: [true, "A tour must have a id"],
-    //   unique: true,
-    // },
-    // _id: {
-    //   type: ObjectId,
-    //   auto: true
-    // },
-    // _id: false,
     name: {
       type: String,
       required: [true, "A tour must have a name"],
