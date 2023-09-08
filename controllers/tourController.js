@@ -79,7 +79,7 @@ exports.deleteTour = catchAsync(async (req, res, next) => {
   res.status(204).json({
     status: "success",
     data: null,
-    message: `The tour with this ID ${req.params.id} was deleted`
+    message: `The tour with this ID ${req.params.id} was deleted`,
   });
 });
 
