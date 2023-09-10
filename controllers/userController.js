@@ -11,18 +11,6 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
-exports.getAllUsers = catchAsync(async (req, res, next) => {
-  const user = await User.find();
-
-  res.status(200).json({
-    status: "success",
-    requestAt: req.requestTime,
-    result: user.length,
-    data: {
-      user,
-    },
-  });
-});
 
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1- create error if user POSTs password data
@@ -57,21 +45,19 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getUser = (req, res) => {
-  res.status(500).json({
-    status: "error",
-    message: "this route is not yet defined!",
-  });
-};
 
 exports.createUser = (req, res) => {
   res.status(500).json({
     status: "error",
-    message: "this route is not yet defined!",
+    message: "this route is not defined! Please use /signup instead",
   });
 };
 
+exports.getUser = factory.getOne(User);
+
+exports.getAllUsers = factory.getAll(User);
+
 // do not update password with this
-exports.updateUser = factory.updateOne(User)
+exports.updateUser = factory.updateOne(User);
 
 exports.deleteUser = factory.deleteOne(User);
