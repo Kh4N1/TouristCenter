@@ -43,7 +43,6 @@ reviewSchema.pre(/^find/, function (next) {
 });
 
 reviewSchema.statics.calcAverageRatings = async function (tourId) {
-  console.log(tourId);
   // this keyword points to model
   const stats = await this.aggregate([
     {
@@ -57,7 +56,6 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {
       },
     },
   ]);
-  console.log(stats);
   await Tour.findByIdAndUpdate(tourId , {
     ratingsQuantity: stats[0].nRating,
     ratingsAverage: stats[0].avgRating
