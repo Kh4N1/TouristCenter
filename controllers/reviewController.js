@@ -21,7 +21,7 @@ exports.deleteReview = async (req, res, next) => {
     const review = await Review.findByIdAndDelete(req.params.id);
 
     if (!review) {
-      return next(new AppError('No review found with that ID', 404));
+      return next(new AppError("No review found with that ID", 404));
     }
 
     // Get the tour ID associated with the deleted review
@@ -31,7 +31,7 @@ exports.deleteReview = async (req, res, next) => {
     await Review.calcAverageRatings(tourId);
 
     res.status(204).json({
-      status: 'success',
+      status: "success",
       data: null,
     });
   } catch (err) {
