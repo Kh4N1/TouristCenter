@@ -67,18 +67,17 @@ reviewSchema.post("save", function () {
   this.constructor.calcAverageRatings(this.tour);
 });
 
-// // findOneAndUpdate
-// // findOneAndDelete
-// reviewSchema.pre(/^findOneAnd/, async function(next) {
-//   this.r = await this.findOne();
-//   // console.log(this.r);
-//   next();
-// });
-//
-// reviewSchema.post(/^findOneAnd/, async function() {
-//   // await this.findOne(); does NOT work here, query has already executed
-//   await this.r.constructor.calcAverageRatings(this.r.tour);
-// });
+
+reviewSchema.methods.updateAndRecalculateAverage = async function (newRating) {
+    // Update the rating of the review
+    this.rating = newRating;
+    await this.save();
+
+    // Recalculate the average ratings for the associated tour
+    await this.constructor.calcAverageRatings(this.tour);
+};
+
+
 
 const Review = mongoose.model("Review", reviewSchema);
 
