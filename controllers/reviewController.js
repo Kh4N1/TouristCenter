@@ -16,6 +16,28 @@ exports.getReview = factory.getOne(Review);
 
 exports.createReview = factory.createOne(Review);
 
+exports.deleteReview = async (req, res, next) => {
+  try {
+    const review = await Review.findByIdAndDelete(req.params.id);
+
+    if (!review) {
+      return next(new AppError('No review found with that ID', 404));
+    }
+
+    // Get the tour ID associated with the deleted review
+    const tourId = review.tour;
+
+    // Calculate the updated average ratings and quantity for the tour
+    await Review.calcAverageRatings(tourId);
+
+    res.status(204).json({
+      status: 'success',
+      data: null,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
 
 exports.updateReview = catchAsync(async (req, res, next) => {
   const review = await Review.findById(req.params.id);
