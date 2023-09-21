@@ -26,6 +26,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(helmet());
 app.use(helmet.xXssProtection());
 
+const csp = "script-src 'self' https://unpkg.com 'unsafe-inline'";
+app.use((req, res, next) => {
+  res.header('Content-Security-Policy', csp);
+  next();
+});
+
 // development logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

@@ -549,6 +549,7 @@ body {
   top: 0;
   bottom: 0;
   width: 100%;
+  height: 100%;
 }
 
 .marker {
@@ -1321,4 +1322,8 @@ body {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
+}
+
+.leaflet-top {
+  display: none;
 }
