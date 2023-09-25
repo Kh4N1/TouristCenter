@@ -2,7 +2,6 @@
 
 
 ## Key Features 📝
-
 -   Authentication and Authorization
     -   Sign up, Log in, Logout, Update, and reset password.
 -   User profile
