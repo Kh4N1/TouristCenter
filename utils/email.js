@@ -19,9 +19,9 @@ module.exports = class Email {
       host: "sandbox.smtp.mailtrap.io",
       port: 2525,
       auth: {
-        user: "3090ae0ca5ce8d",
-        pass: "3e00a4ee8f33df",
-      },
+        user: "82dc456943e905",
+        pass: "53cd79e1905497"
+      }
     });
   }
 
