@@ -22,24 +22,6 @@
     -   An admin can delete any review.
 -   Credit card Payment
 
-## Demonstration 🖥️
-
-#### Home Page :
-
-![image](https://github.com/Kh4N1/tourist-center/blob/main/MainPage_exp.png)
-
-#### Tour Details :
-
-![image](https://github.com/Kh4N1/tourist-center/blob/main/TourPage_exp.png)
-
-#### User Profile :
-
-![image](https://github.com/Kh4N1/tourist-center/blob/main/UserPage_exp.png)
-
-#### Admin Profile :
-
-![image](https://github.com/Kh4N1/tourist-center/blob/main/AdminPage_exp.png)
-
 ## Build With 🏗️
 
 -   [NodeJS](https://nodejs.org/en/) - JS runtime environment
@@ -63,6 +45,26 @@
 -   Advanced authentication features
     -   Signup, confirm user email, log in with refresh token, two-factor authentication
 -   And More! There's always room for improvement!
+
+
+## Demonstration 🖥️
+
+#### Home Page :
+
+![image](https://github.com/Kh4N1/tourist-center/blob/main/MainPage_exp.png)
+
+#### Tour Details :
+
+![image](https://github.com/Kh4N1/tourist-center/blob/main/TourPage_exp.png)
+
+#### User Profile :
+
+![image](https://github.com/Kh4N1/tourist-center/blob/main/UserPage_exp.png)
+
+#### Admin Profile :
+
+![image](https://github.com/Kh4N1/tourist-center/blob/main/AdminPage_exp.png)
+
 
 ## Setting Up Your Local Environment ⚙️
 
